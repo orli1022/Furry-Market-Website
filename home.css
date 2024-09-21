@@ -1,0 +1,1217 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.banner-box {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 999;
+}
+
+.banner-box > img {
+    width: 100%;
+    aspect-ratio: 1920 / 960;
+    vertical-align: middle;
+}
+
+.scrollBtn {
+    height: 100px;
+    position: absolute;
+    bottom: 15%;
+    writing-mode: vertical-lr;
+    text-align: center;
+    right: 100px;
+    color: #fff;
+    letter-spacing: 0.5em;
+}
+
+.scrollBtn::before {
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: 10px;
+    border-right: 2px solid #fff;
+    animation: scroll01 3s alternate infinite;
+}
+
+.scrollBtn::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: -10px;
+    display: block;
+    background: url(assets/ball.png) no-repeat center;
+    background-size: contain;
+    animation: scroll02 3s alternate infinite;
+}
+
+@keyframes scroll01 {
+    0% {
+        height: 100px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+
+@keyframes scroll02 {
+    0% {
+        top: -70%;
+    }
+    100% {
+        top: -145%;
+    }
+}
+
+.icon {
+    position: absolute;
+    width: 20%;
+    top: 5%;
+    left: 10%;
+}
+
+.icon img {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    z-index: 100;
+}
+
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    transition: position 0.5s;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.menu {
+    width: 120px;
+    height: 100px;
+    background-color: #f5ae52;
+    position: relative;
+}
+
+.menuBtn {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 10%;
+    right: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.menuBtn span {
+    font-size: 16px;
+    margin-bottom: 0.1em;
+}
+
+.menuBtn i {
+    font-size: 40px;
+}
+
+.container {
+    margin-top: -150px;
+    box-sizing: border-box;
+}
+
+.infoArea {
+    margin: auto;
+    text-align: center;
+    padding-top: 150px;
+    background: linear-gradient(0deg, #fff 50%, #ffd1a9a5);
+}
+
+.title-box {
+    margin-bottom: 50px;
+}
+
+.title-box h1 {
+    font-size: 48px;
+    font-family: "Fascinate Inline", system-ui;
+    color: rgb(31, 47, 78);
+}
+
+.title-box h2 {
+    position: relative;
+    display: inline-block;
+    color: #f5ae52;
+}
+
+.title-box h2 img {
+    width: 32px;
+    height: 32px;
+    margin: 0px 10px;
+    vertical-align: bottom;
+}
+
+.newsArea .title-box h1 {
+    display: inline;
+}
+
+.info-box {
+    width: 350px;
+    height: 400px;
+    box-sizing: border-box;
+    margin: 0px 20px;
+    text-align: center;
+    border: 10px double #fff;
+    border-radius: 20px;
+}
+
+.info-box.active {
+    opacity: 1;
+}
+
+.info-box:nth-child(1) {
+    background-color: #ee686a;
+}
+
+.info-box:nth-child(2) {
+    background-color: #60bde9;
+}
+
+.info-box:nth-child(3) {
+    background-color: #e9b674;
+}
+
+.info-box .icon {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: 50px;
+    line-height: 60px;
+}
+
+.info-box:hover .icon i {
+    animation: shake 0.2s linear infinite alternate;
+}
+
+.info-box:nth-child(1) .icon {
+    color: #ee686a;
+    border: 5px solid #ee686a;
+}
+
+.info-box:nth-child(2) .icon {
+    color: #60bde9;
+    border: 5px solid #60bde9;
+}
+
+.info-box:nth-child(3) .icon {
+    color: #e9b674;
+    border: 5px solid #e9b674;
+}
+
+.info-txt {
+    padding: 20px 25px 30px;
+    margin: 10px 0px;
+}
+
+.info-txt h2,
+.info-txt h3 {
+    color: #fff;
+}
+
+.info-txt p {
+    margin-top: 10px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.info-content {
+    margin-top: 30px;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+.btn {
+    display: inline-block;
+    margin: 50px 0px 20px;
+    padding: 15px 25px;
+    background-color: #f5ae52;
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.btn i {
+    margin-left: 10px;
+}
+
+.btn:hover {
+    background-color: rgb(245, 146, 33);
+}
+
+.photoGridArea {
+    margin: 100px 0px;
+    background-color: #fa0;
+    padding: 5px;
+}
+
+.grid-wrap {
+    display: flex;
+}
+
+.grid-wrap img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.left,
+.right {
+    width: 50%;
+}
+
+.right .big-pic {
+    order: 1;
+}
+
+.top,
+.bottom {
+    display: flex;
+}
+
+.big-pic {
+    width: 100%;
+}
+
+.small-pic {
+    width: 50%;
+    display: flex; /* 解決間距問題 */
+    flex-direction: column;
+}
+
+.grid-item {
+    position: relative;
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+.grid-item:hover .item-txt {
+    opacity: 1;
+}
+
+.grid-item .item-txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.t,
+.r,
+.b,
+.l {
+    position: absolute;
+    background-color: #1fafdf;
+    transition: 0.3s 0.3s;
+    width: 0; /* 設定初始值 */
+    height: 0;
+}
+
+.t {
+    top: 0; /* 右上角*/
+    right: 0;
+    height: 10px;
+}
+
+.r {
+    bottom: 0; /* 右下角 */
+    right: 0;
+    width: 10px;
+}
+
+.b {
+    left: 0; /* 左下角 */
+    bottom: 0;
+    height: 8px;
+}
+
+.l {
+    left: 0; /* 左上角 */
+    top: 0;
+    width: 10px;
+}
+
+.grid-item:hover .t,
+.grid-item:hover .b {
+    width: 100%;
+    height: 8px;
+}
+
+.grid-item:hover .r,
+.grid-item:hover .l {
+    height: 100%;
+    width: 10px;
+}
+
+.photoArea {
+    background-image: linear-gradient(0deg, #fff 20%, #f08b8b 80%, #fff 10%);
+}
+
+.photoArea .slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.photo-wrap {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    border: 10px solid #f75555;
+}
+
+.photo-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.photo-box img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.photo-box.active {
+    opacity: 1;
+}
+
+.btn-group {
+    position: relative;
+    top: -40px;
+    left: 250px;
+}
+
+.btn-group button {
+    width: 50px;
+    height: 50px;
+    background-color: #f75555;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+.newsArea {
+    position: relative;
+}
+
+.newsArea .btn {
+    position: absolute;
+    top: 5px;
+}
+
+.news-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.news-box {
+    display: flex;
+    width: 580px;
+    margin: 20px 0px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #888;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.news-pic {
+    width: 40%;
+}
+.news-txt {
+    width: 60%;
+}
+
+.news-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-txt {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.news-txt p {
+    margin: 10px 0px 15px;
+}
+
+.news-txt a {
+    border: 1px solid #aaa;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 30px;
+    color: #aaa;
+    margin-top: auto; /* 才不會因為內文字數不同而影響位置 */
+    align-self: flex-end; /* 斥軸靠右 */
+}
+
+.news-txt a:hover {
+    color: #fff;
+    background-color: #ccc;
+}
+
+.event-info {
+    position: relative;
+    padding: 20px;
+}
+
+.event-info p {
+    line-height: 1.6;
+}
+
+.event-info p {
+    margin-bottom: 40px;
+}
+
+.event-pic {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -100px;
+    right: 0;
+}
+
+.event-pic img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.bookingBtn {
+    margin-left: 50px;
+}
+
+.bookingBtn a {
+    padding: 5px 10px;
+    background-color: #f5ae52;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    margin: 0px 5px;
+}
+
+.bookingBtn a i {
+    margin-right: 5px;
+}
+
+.bookingBtn a:hover {
+    background-color: rgb(245, 146, 33);
+}
+
+.calendar {
+    width: 600px;
+    margin: auto;
+}
+
+.calendar img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.aboutArea {
+    width: 100%;
+    height: 650px;
+    background: url(assets/aboutbg.jpg) top center / 100% auto no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.about-pic {
+    width: 200px;
+    height: 200px;
+}
+
+.about-pic img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.about-txt {
+    text-align: center;
+    line-height: 1.6;
+}
+
+.about-txt p {
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-box {
+    position: relative;
+    box-sizing: border-box;
+    margin: 60px 20px;
+    padding: 15px;
+    width: 300px;
+    height: 450px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.footer-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-box:hover .footer-txt {
+    opacity: 1;
+}
+
+.footer-txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #2a2a2a;
+    text-shadow: 1px 2px 0px #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(225, 225, 225, 0.7);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.sponsor-icon {
+    width: 150px;
+    height: 150px;
+}
+
+.topBtn {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 100px;
+    right: 20px;
+    border-radius: 50%;
+    background-color: #cccccc87;
+}
+
+.topBtn {
+    font-size: 30px;
+    line-height: 50px;
+}
+
+footer {
+    background-color: #0a0a28;
+    color: #bebedc;
+}
+
+.footer-group {
+    margin: 0px 50px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.footer-right a {
+    color: #bebedc;
+    position: relative;
+    text-decoration: none;
+    margin: 0px 10px;
+    font-size: 20px;
+}
+
+/* 小型手機 */
+@media (max-width: 480px) {
+    .scrollBtn {
+        display: none;
+    }
+
+    .header-box {
+        justify-content: flex-end;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu {
+        width: 70px;
+        height: 70px;
+    }
+
+    .menuBtn {
+        width: 40px;
+        height: 40px;
+        top: 17%;
+    }
+
+    .menuBtn i {
+        font-size: 35px;
+    }
+
+    .title-box {
+        margin-bottom: 20px;
+    }
+
+    .title-box h2 {
+        font-size: 20px;
+    }
+    .title-box h2 img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .slider {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-wrap {
+        width: 400px;
+        height: 460px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .info-box {
+        width: 280px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .photoGridArea {
+        padding: 10px;
+    }
+
+    .grid-wrap {
+        flex-direction: column;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .grid-item {
+        margin: 5px;
+    }
+
+    .photo-wrap {
+        width: 320px;
+        height: 240px;
+    }
+
+    .btn-group {
+        top: -30px;
+        left: 80px;
+    }
+
+    .newsArea,
+    .eventArea {
+        padding: 50px 20px 50px;
+    }
+
+    .newsArea .btn {
+        display: none;
+    }
+
+    .news-box {
+        flex-direction: column;
+        width: 300px;
+    }
+
+    .news-pic,
+    .news-txt {
+        width: 100%;
+    }
+
+    .news-pic img {
+        height: auto;
+        object-fit: none;
+    }
+
+    .event-pic {
+        display: none;
+    }
+
+    .event-pic {
+        display: none;
+    }
+
+    .bookingBtn {
+        margin-left: 0px;
+    }
+
+    .calendar {
+        width: 100%;
+    }
+
+    .aboutArea {
+        background-size: auto 100%;
+        background-position: 35% center;
+    }
+
+    .footer-group {
+        flex-direction: column;
+        padding: 20px;
+        margin: 0px;
+    }
+
+    .topBtn {
+        right: 10px;
+        bottom: 50px;
+    }
+}
+
+/* 中型手機 */
+@media (min-width: 481px) and (max-width: 768px) {
+    .scrollBtn {
+        right: 30px;
+        bottom: 20px;
+        font-size: 14px;
+        letter-spacing: 0.3em;
+    }
+
+    .scrollBtn::before {
+        top: -45%;
+    }
+
+    .scrollBtn::after {
+        width: 20px;
+        height: 20px;
+        top: -40%;
+        left: 0px;
+    }
+
+    @keyframes scroll01 {
+        0% {
+            height: 35px;
+        }
+        100% {
+            height: 15px;
+        }
+    }
+
+    @keyframes scroll02 {
+        0% {
+            top: -13%;
+        }
+        100% {
+            top: -40%;
+        }
+    }
+
+    .header-box {
+        justify-content: flex-end;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu {
+        width: 90px;
+        height: 80px;
+    }
+
+    .menuBtn {
+        width: 50px;
+        height: 50px;
+        right: 15%;
+        top: 15%;
+    }
+
+    .menuBtn i {
+        font-size: 35px;
+    }
+
+    .title-box {
+        margin-bottom: 20px;
+    }
+
+    .title-box h2 {
+        font-size: 20px;
+    }
+
+    .title-box h2 img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .slider {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-wrap {
+        width: 400px;
+        height: 460px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .info-box {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .photoGridArea {
+        padding: 10px;
+    }
+
+    .grid-wrap {
+        flex-direction: column;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .grid-item {
+        margin: 5px;
+    }
+
+    .photo-wrap {
+        width: 400px;
+        height: 300px;
+    }
+
+    .btn-group {
+        top: -30px;
+        left: 120px;
+    }
+
+    .newsArea,
+    .eventArea {
+        padding: 50px 40px 50px;
+    }
+
+    .newsArea .btn {
+        display: none;
+    }
+
+    .news-box {
+        flex-direction: column;
+        width: 340px;
+    }
+
+    .news-pic,
+    .news-txt {
+        width: 100%;
+    }
+
+    .news-pic img {
+        height: auto;
+        object-fit: none;
+    }
+
+    .event-pic {
+        display: none;
+    }
+
+    .bookingBtn {
+        margin-left: 0px;
+    }
+
+    .calendar {
+        width: 100%;
+    }
+
+    .aboutArea {
+        background-size: auto 100%;
+        background-position: 40% center;
+    }
+
+    .footer-group {
+        flex-direction: column;
+        padding: 20px;
+        margin: 0px;
+    }
+}
+
+/* 平板 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .scrollBtn {
+        right: 50px;
+    }
+
+    .scrollBtn::before {
+        top: -110%;
+    }
+
+    .scrollBtn::after {
+        left: -9px;
+    }
+
+    @keyframes scroll01 {
+        0% {
+            height: 70px;
+        }
+        100% {
+            height: 15px;
+        }
+    }
+
+    @keyframes scroll02 {
+        0% {
+            top: -50%;
+        }
+        100% {
+            top: -105%;
+        }
+    }
+
+    .header-box {
+        justify-content: flex-end;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu {
+        width: 100px;
+        height: 90px;
+    }
+
+    .menuBtn {
+        right: 10%;
+    }
+
+    .infoArea {
+        padding-top: 100px;
+    }
+
+    .info-wrap {
+        margin: 0px 70px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-box {
+        margin: 0px 30px;
+        position: relative;
+        box-shadow: 10px 20px 50px #00000088;
+    }
+
+    .photo-wrap {
+        width: 600px;
+        height: 400px;
+    }
+
+    .btn-group {
+        top: -30px;
+        left: 200px;
+    }
+
+    .newsArea,
+    .eventArea {
+        padding: 50px;
+    }
+
+    .newsArea .btn {
+        right: 110px;
+    }
+
+    .aboutArea {
+        background-size: auto 100%;
+    }
+}
+
+/* 小型桌機 */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .infoArea {
+        padding-top: 100px;
+    }
+
+    .info-wrap {
+        margin: 0px 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-box {
+        margin: 0px 30px;
+        position: relative;
+        box-shadow: 10px 20px 50px #00000088;
+    }
+
+    .btn-group button {
+        width: 70px;
+        height: 70px;
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .newsArea,
+    .eventArea {
+        padding: 50px 120px 50px;
+    }
+
+    .newsArea .btn {
+        right: 130px;
+    }
+
+    .event-pic {
+        right: 80px;
+    }
+}
+
+/* 桌機 */
+@media (min-width: 1201px) {
+    .infoArea {
+        padding-top: 100px;
+    }
+
+    .info-wrap {
+        margin: 0px 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-box {
+        position: relative;
+        box-shadow: 10px 20px 50px #00000088;
+    }
+
+    .btn-group button {
+        width: 70px;
+        height: 70px;
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .newsArea,
+    .eventArea {
+        padding: 50px 120px 50px;
+    }
+
+    .newsArea .btn {
+        right: 140px;
+    }
+
+    .news-box {
+        width: 462px;
+    }
+
+    .news-box:nth-child(odd) {
+        margin: 20px 15px 20px 0px;
+    }
+
+    .news-txt {
+        padding: 10px;
+    }
+
+    .event-wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .event-pic {
+        right: -220px;
+    }
+
+    .calendar {
+        width: 500px;
+        margin: 0px;
+    }
+
+    .footer-wrap {
+        flex-wrap: nowrap;
+    }
+}
