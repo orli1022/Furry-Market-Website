@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="Orli CHAO" />
         <title>毛茸茸市集 Furry Market</title>
+        <link rel="icon" href="assets/paw.png" />
         <link rel="stylesheet" href="home.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <script
             src="https://kit.fontawesome.com/7ed6dec2c8.js"
             crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="home.js" defer></script>
-        <style></style>
     </head>
     <body>
         <!-- bannerArea -->
@@ -310,54 +317,54 @@
                         >更多消息<i class="fa-solid fa-arrow-right"></i
                     ></a>
 
-                    <div class="slider">
-                        <div class="news-wrap">
-                            <div class="news-box">
+                    <div class="swiper newsSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide news-box">
                                 <div class="news-pic">
                                     <img
-                                        src="https://picsum.photos/480/320/?random0" />
+                                        src="https://picsum.photos/480/320/?random3" />
                                 </div>
                                 <div class="news-txt">
-                                    <p class="date">2024-09-21</p>
+                                    <p class="date">- 2024-09-21 -</p>
                                     <p>
                                         【活動快訊】毛孩印記藝術坊即將開課！限量名額，快來與您的寵物一起創作獨特的藝術作品！
                                     </p>
                                     <a href="#">More</a>
                                 </div>
                             </div>
-                            <div class="news-box">
+                            <div class="swiper-slide news-box">
                                 <div class="news-pic">
                                     <img
                                         src="https://picsum.photos/480/320/?random0" />
                                 </div>
                                 <div class="news-txt">
-                                    <p class="date">2024-09-09</p>
+                                    <p class="date">- 2024-09-09 -</p>
                                     <p>
                                         【最新消息】本週末舉辦寵物健康講座，專業獸醫分享照護小技巧，歡迎報名參加！
                                     </p>
                                     <a href="#">More</a>
                                 </div>
                             </div>
-                            <div class="news-box">
+                            <div class="swiper-slide news-box">
                                 <div class="news-pic">
                                     <img
-                                        src="https://picsum.photos/480/320/?random0" />
+                                        src="https://picsum.photos/480/320/?random1" />
                                 </div>
                                 <div class="news-txt">
-                                    <p class="date">2024-08-16</p>
+                                    <p class="date">- 2024-08-16 -</p>
                                     <p>
                                         【活動公告】參加我們的寵物才藝比賽，展現毛孩的特長，贏取豐富獎品，盡快報名吧！
                                     </p>
                                     <a href="#">More</a>
                                 </div>
                             </div>
-                            <div class="news-box">
+                            <div class="swiper-slide news-box">
                                 <div class="news-pic">
                                     <img
-                                        src="https://picsum.photos/480/320/?random0" />
+                                        src="https://picsum.photos/480/320/?random2" />
                                 </div>
                                 <div class="news-txt">
-                                    <p class="date">2024-07-26</p>
+                                    <p class="date">- 2024-07-26 -</p>
                                     <p>
                                         【活動公告】寵物友善市集開幕，精選商品和互動活動，讓您與毛孩一起享受美好時光！
                                     </p>
@@ -385,7 +392,7 @@
                             <p>
                                 ▪︎ 每日名額有限，請務必提前3天預約。<br />
                                 ▪︎ 來電預約：04-1234-5678<br />
-                                ▪︎線上預約：https://workshop.tw/furrymarket
+                                ▪︎ 線上預約：https://workshop.tw/furrymarket
                             </p>
                             <div class="bookingBtn">
                                 <a href="#"
@@ -432,9 +439,9 @@
             </main>
             <!-- footerArea -->
             <div class="footerArea">
-                <div class="slider">
-                    <div class="footer-wrap">
-                        <div class="footer-box">
+                <div class="swiper footerSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide footer-box">
                             <img src="assets/f01.jpg" />
                             <div class="footer-txt">
                                 <div class="sponsor-icon">
@@ -443,8 +450,8 @@
                                 <h3>毛茸茸寵物有限公司</h3>
                             </div>
                         </div>
-                        <div class="footer-box">
-                            <img src="assets/f02.jpg" />
+                        <div class="swiper-slide footer-box">
+                            <img src="assets/f02.jpeg" />
                             <div class="footer-txt">
                                 <div class="sponsor-icon">
                                     <img src="assets/f02-icon.png" alt="" />
@@ -452,7 +459,7 @@
                                 <h3>寵愛無限美容中心</h3>
                             </div>
                         </div>
-                        <div class="footer-box">
+                        <div class="swiper-slide footer-box">
                             <img src="assets/f03.jpg" />
                             <div class="footer-txt">
                                 <div class="sponsor-icon">
@@ -461,8 +468,8 @@
                                 <h3>快樂寵物醫療診所</h3>
                             </div>
                         </div>
-                        <div class="footer-box">
-                            <img src="assets/f04.jpg" />
+                        <div class="swiper-slide footer-box">
+                            <img src="assets/f04.PNG" />
                             <div class="footer-txt">
                                 <div class="sponsor-icon">
                                     <img src="assets/f04-icon.png" alt="" />
@@ -505,6 +512,5 @@
                 </div>
             </div>
         </footer>
-        <!-- <div class="topBtn">top</div> -->
     </body>
 </html>

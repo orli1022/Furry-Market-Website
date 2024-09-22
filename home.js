@@ -96,3 +96,68 @@ function setPhoto() {
     photoBoxes.forEach(box => box.classList.remove("active"));
     photoBoxes[photoIndex].classList.add("active");
 }
+
+// Swiper.js
+
+let newsSwiper; // newsArea
+let footerSwiper; // footerArea
+
+function initNewsSwiper() {
+    // 初始化 Swiper
+    newsSwiper = new Swiper(".newsSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 3000 // 每3秒切換下一張
+        },
+        loop: true // 循環
+    });
+}
+
+function initFooterSwiper() {
+    footerSwiper = new Swiper(".footerSwiper", {
+        autoplay: {
+            delay: 2000
+        },
+        loop: true,
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 50
+            },
+            0: {
+                slidesPerView: 1
+            }
+        }
+    });
+}
+
+function checkWindowSize() {
+    // 檢查視窗大小
+    if (window.innerWidth <= 1200) {
+        if (!newsSwiper) {
+            initNewsSwiper(); // 初始化newsSwiper
+        }
+        if (!footerSwiper) {
+            initFooterSwiper(); // 初始化footerSwiper
+        }
+    } else {
+        // destroy swiper
+        if (newsSwiper) {
+            newsSwiper.destroy(true, true); // 清除swiper instance, clean style 重置
+            newsSwiper = null;
+        }
+        if (footerSwiper) {
+            footerSwiper.destroy(true, true);
+            footerSwiper = null;
+        }
+    }
+}
+
+checkWindowSize(); // 載入網頁就先檢查
+
+window.addEventListener("resize", checkWindowSize); // 檢查視窗大小
