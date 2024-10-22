@@ -205,7 +205,7 @@ function initNewsSwiper() {
         slidesPerView: 1,
         spaceBetween: 20,
         autoplay: {
-            delay: 3000 // 每3秒切換下一張
+            delay: 5000 // 每5秒切換下一張
         },
         loop: true // 循環
     });
@@ -214,7 +214,7 @@ function initNewsSwiper() {
 function initFooterSwiper() {
     footerSwiper = new Swiper(".footerSwiper", {
         autoplay: {
-            delay: 2000
+            delay: 3000
         },
         loop: true,
         breakpoints: {
