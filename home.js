@@ -97,6 +97,103 @@ function setPhoto() {
     photoBoxes[photoIndex].classList.add("active");
 }
 
+// eventArea
+
+let currentDate = new Date();
+let currentMonth = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
+const prevMonth = document.querySelector(".prevMonth");
+const nextMonth = document.querySelector(".nextMonth");
+const monthNames = [
+    "一月",
+    "二月",
+    "三月",
+    "四月",
+    "五月",
+    "六月",
+    "七月",
+    "八月",
+    "九月",
+    "十月",
+    "十一月",
+    "十二月"
+];
+const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
+
+function createCalendar() {
+    const firstDay = new Date(currentYear, currentMonth, 1); // 當月第一天
+    const lastDay = new Date(currentYear, currentMonth + 1, 0); // 當月最後一天
+    const startingDay = firstDay.getDay(); // 當月第一天是星期幾
+    const monthLength = lastDay.getDate(); // 當月總天數
+
+    // 顯示月份
+    const monthDisplay = document.getElementById("monthDisplay");
+    monthDisplay.textContent = `${currentYear}年 ${monthNames[currentMonth]}`;
+
+    const calendar = document.getElementById("calendar");
+    calendar.innerHTML = "";
+
+    // 星期幾的header
+    weekdays.forEach(weekday => {
+        const weekdayDiv = document.createElement("div");
+        weekdayDiv.classList.add("weekday");
+        weekdayDiv.textContent = weekday;
+        calendar.appendChild(weekdayDiv);
+    });
+
+    // 添加月份第一天之前的空白格子
+    for (let i = 0; i < startingDay; i++) {
+        const dayDiv = document.createElement("div");
+        calendar.appendChild(dayDiv);
+    }
+
+    // 當月所有日期
+    const today = new Date();
+    for (let i = 1; i <= monthLength; i++) {
+        const dayDiv = document.createElement("div");
+        const day = document.createElement("div");
+        day.textContent = i;
+        day.classList.add("day");
+
+        // 顯示當天
+        if (
+            today.getDate() === i &&
+            today.getMonth() === currentMonth &&
+            today.getFullYear() === currentYear
+        ) {
+            day.classList.add("current-day");
+        }
+
+        dayDiv.appendChild(day);
+        calendar.appendChild(dayDiv);
+    }
+}
+
+// 上個月
+prevMonth.addEventListener("click", () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+        // 月份<0，切換到上一年的12月
+        currentMonth = 11;
+        currentYear--;
+    }
+    createCalendar();
+});
+
+// 下個月
+nextMonth.addEventListener("click", () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+        // 月份>11，切換到下一年的1月
+        currentMonth = 0;
+        currentYear++;
+    }
+
+    createCalendar();
+});
+
+createCalendar();
+
 // Swiper.js
 
 let newsSwiper; // newsArea

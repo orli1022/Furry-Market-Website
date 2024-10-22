@@ -584,14 +584,83 @@ header {
     background-color: rgb(245, 146, 33);
 }
 
-.calendar {
-    width: 600px;
-    margin: auto;
+/* calendar */
+
+.calendar-container {
+    max-width: 500px;
+    margin: 50px auto 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.calendar img {
-    width: 100%;
-    vertical-align: middle;
+.calendar-header {
+    background: #5d9ee8;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+
+.calendar-header button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: white;
+    padding: 5px;
+    gap: 2px;
+}
+
+.calendar-grid div {
+    padding: 2px;
+    text-align: center;
+    min-width: 30px;
+}
+
+.weekday {
+    font-weight: bold;
+    color: #666;
+    font-size: 0.9em;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.day {
+    cursor: default;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 2px auto;
+    display: inline-block;
+}
+
+.day:hover {
+    background: #f0f0f0;
+}
+
+.current-day {
+    background: #4a90e2;
+    color: white;
+}
+
+.other-month {
+    color: #ccc;
 }
 
 /* aboutArea */
@@ -848,10 +917,6 @@ footer {
         margin-left: 0px;
     }
 
-    .calendar {
-        width: 100%;
-    }
-
     .aboutArea {
         background-size: auto 100%;
         background-position: 35% center;
@@ -1029,10 +1094,6 @@ footer {
 
     .bookingBtn {
         margin-left: 0px;
-    }
-
-    .calendar {
-        width: 100%;
     }
 
     .aboutArea {
@@ -1248,9 +1309,9 @@ footer {
         right: -220px;
     }
 
-    .calendar {
-        width: 500px;
-        margin: 0px;
+    .calendar-container {
+        width: 460px;
+        margin: -50px 0 0;
     }
 
     .footerArea .swiper-wrapper {
