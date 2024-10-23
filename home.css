@@ -143,6 +143,108 @@ header {
     font-size: 40px;
 }
 
+/* menuPage */
+
+.menuPage {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.8s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.menuPage.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menuPage.active .menuContent li,
+.menuPage.active .menuLogo img {
+    transform: scale(1);
+}
+
+.menuPage .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.menuLogo {
+    width: 150px;
+    margin: 30px auto 0px;
+}
+
+.menuLogo img {
+    width: 100%;
+    transform: scale(0.5);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.menuContent {
+    margin: auto;
+}
+
+.menuContent ul {
+    font-weight: bold;
+    margin: auto;
+    font-size: 24px;
+}
+
+.menuContent li {
+    line-height: 2.5em;
+    transition: color 0.2s;
+    transform: scale(0.5);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.menuContent li a {
+    text-decoration: none;
+    color: #2a2a2a;
+    transition: color 0.2s;
+}
+
+.menuContent li:hover,
+.menuContent li:hover a {
+    color: #f5ae52;
+}
+
+.dropdown-btn {
+    color: #2a2a2a;
+    cursor: pointer;
+}
+
+.dropdown-btn i {
+    margin-left: 10px;
+}
+
+.dropdown-menu {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 10px;
+    transition: opacity 0.5s, max-height 0.5s;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    max-height: 500px;
+}
+
+.dropdown-menu li {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 2;
+}
+
+.closeBtn {
+    right: 20%;
+}
+
 /* container */
 
 .container {
@@ -1207,6 +1309,31 @@ footer {
 
 /* 小型桌機 */
 @media (min-width: 1025px) and (max-width: 1200px) {
+    .menuPage {
+        flex-direction: row;
+    }
+
+    .menuLogo {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 8px dotted #ccc;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .menuLogo img {
+        width: auto;
+    }
+
+    .menuContent {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+    }
+
     .infoArea {
         padding-top: 100px;
     }
@@ -1250,6 +1377,31 @@ footer {
 
 /* 桌機 */
 @media (min-width: 1201px) {
+    .menuPage {
+        flex-direction: row;
+    }
+
+    .menuLogo {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 8px dotted #ccc;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .menuLogo img {
+        width: auto;
+    }
+
+    .menuContent {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+    }
+
     .infoArea {
         padding-top: 100px;
     }

@@ -16,6 +16,36 @@ window.addEventListener("scroll", () => {
     }
 });
 
+// menu
+
+const dropdownBtn = document.querySelector(".dropdown-btn");
+const dropdownMenu = document.querySelector(".dropdown-menu");
+let isMenuOpen = false;
+
+dropdownBtn.addEventListener("click", () => {
+    if (isMenuOpen) {
+        dropdownMenu.classList.remove("show");
+        isMenuOpen = false;
+    } else {
+        dropdownMenu.classList.add("show");
+        isMenuOpen = true;
+    }
+});
+
+const menuPage = document.querySelector(".menuPage");
+const openMenuBtn = document.querySelector(".openBtn");
+const closeMenuBtn = document.querySelector(".closeBtn");
+
+openMenuBtn.addEventListener("click", () => {
+    menuPage.classList.add("active");
+    document.body.style.overflow = "hidden";
+});
+
+closeMenuBtn.addEventListener("click", () => {
+    menuPage.classList.remove("active");
+    document.body.style.overflow = "";
+});
+
 // infoArea
 
 // max-width: 768px
