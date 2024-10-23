@@ -198,9 +198,8 @@ header {
 
 .menuContent li {
     line-height: 2.5em;
-    transition: color 0.2s;
     transform: scale(0.5);
-    transition: opacity 2s ease, transform 2s ease;
+    transition: color 0.2s, opacity 2s ease, transform 2s ease;
 }
 
 .menuContent li a {
@@ -221,9 +220,8 @@ header {
     font-size: 24px;
     font-weight: bold;
     line-height: 2.5em;
-    transition: color 0.2s;
     transform: scale(0.5);
-    transition: opacity 2s ease, transform 2s ease;
+    transition: color 0.2s, opacity 2s ease, transform 2s ease;
 }
 
 .dropdown-btn i {
