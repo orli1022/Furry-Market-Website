@@ -874,6 +874,7 @@ header {
     height: 50px;
     bottom: 100px;
     right: 20px;
+    border: none;
     border-radius: 50%;
     background-color: #cccccc87;
     z-index: 100;
